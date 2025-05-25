@@ -1,0 +1,53 @@
+@model Candidate
+<div class="display-6">
+    Apply
+</div>
+
+<form method="post" asp-action="Apply">
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="form-group  my-2">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" >
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="firstName">Firts Name</label>
+        <input  asp-for="firstName" class="form-control" type="text">
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="lastName">Last Name</label>
+        <input  asp-for="lastName" class="form-control" type="text">
+    </div>
+    
+    <div class="form-group my-2">
+        <label asp-for="Age"></label>
+        <select asp-for="Age" class="form-control" >
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+        </select>    
+    </div>
+
+    <fieldset>
+        <legend> One Course</legend>
+        <p><input id="mvc" type="radio" asp-for="selectedCourse" value="ASP.NET Core MVC" checked>
+        <label for="">ASP.NET Core MVC</label>
+        </p>
+        <p><input id="api" type="radio" asp-for="selectedCourse" value="ASP.NET Core API">
+        <label for="">ASP.NET Core API</label>
+        </p>
+        <p><input id="blazor" type="radio" asp-for="selectedCourse" value="BLAZOR">
+        <label for="">Blazor</label>
+        </p>
+
+    </fieldset>
+
+    <div>
+            <button class="btn btn-primary" type="submit">Apply</button>
+            <a class="btn btn-warning" asp-controller="home" asp-action="index">Home</a>
+        </div>
+   
+   
+</form>
